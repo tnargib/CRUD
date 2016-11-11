@@ -1,0 +1,24 @@
+<div class="form" id="form_reptile">
+{{ form_start(form_reptile) }}
+
+    {{ form_errors(form_reptile) }}
+
+    <div class="form-group">
+      	{{ form_label(form_reptile.name, "Nom de l'animal") }}
+
+      	{{ form_errors(form_reptile.name) }}
+
+    	{{ form_widget(form_reptile.name, {'attr': {'class': 'form-control'}}) }}
+    </div>
+
+    <div class="form-group">
+  		{{ form_label(form_reptile.scale, "Ecaillure") }}
+      	{{ form_errors(form_reptile.scale) }}
+        {{ form_widget(form_reptile.scale, {'attr': {'class': 'form-control'}}) }}
+    </div>
+
+		{{ form_widget(form_reptile.Enregistrer, {'attr': {'class': 'btn btn-default'}}) }}
+  	{{ form_rest(form_reptile) }}
+
+{{ form_end(form_reptile) }}
+</div>

@@ -1,0 +1,24 @@
+<div class="form" id="form_oiseau">
+{{ form_start(form_oiseau) }}
+
+    {{ form_errors(form_oiseau) }}
+
+    <div class="form-group">
+      	{{ form_label(form_oiseau.name, "Nom de l'animal") }}
+
+      	{{ form_errors(form_oiseau.name) }}
+
+    	{{ form_widget(form_oiseau.name, {'attr': {'class': 'form-control'}}) }}
+    </div>
+
+    <div class="form-group">
+  		{{ form_label(form_oiseau.feathers, "Plummage") }}
+      	{{ form_errors(form_oiseau.feathers) }}
+        {{ form_widget(form_oiseau.feathers, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    
+		{{ form_widget(form_oiseau.Enregistrer, {'attr': {'class': 'btn btn-default'}}) }}
+  	{{ form_rest(form_oiseau) }}
+
+{{ form_end(form_oiseau) }}
+</div>

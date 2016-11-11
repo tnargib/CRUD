@@ -1,0 +1,64 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Mammifere
+ *
+ * @ORM\Table(name="mammifere")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\MammifereRepository")
+ */
+class Mammifere extends Animal
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="fur", type="string", length=255)
+     */
+    private $fur;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set fur
+     *
+     * @param string $fur
+     * @return Mammifere
+     */
+    public function setFur($fur)
+    {
+        $this->fur = $fur;
+
+        return $this;
+    }
+
+    /**
+     * Get fur
+     *
+     * @return string 
+     */
+    public function getFur()
+    {
+        return $this->fur;
+    }
+}

@@ -1,0 +1,24 @@
+<div class="form" id="form_mammifere">
+{{ form_start(form_mammifere) }}
+
+    {{ form_errors(form_mammifere) }}
+
+    <div class="form-group">
+      	{{ form_label(form_mammifere.name, "Nom de l'animal") }}
+
+      	{{ form_errors(form_mammifere.name) }}
+
+    	{{ form_widget(form_mammifere.name, {'attr': {'class': 'form-control'}}) }}
+    </div>
+
+    <div class="form-group">
+  		{{ form_label(form_mammifere.fur, "Fourrure") }}
+      	{{ form_errors(form_mammifere.fur) }}
+        {{ form_widget(form_mammifere.fur, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    
+		{{ form_widget(form_mammifere.Enregistrer, {'attr': {'class': 'btn btn-default'}}) }}
+  	{{ form_rest(form_mammifere) }}
+
+{{ form_end(form_mammifere) }}
+</div>

@@ -1,0 +1,15 @@
+app_homepage:
+    path:     /
+    defaults: { _controller: AppBundle:Default:index }
+
+app_add:
+    path:     /add
+    defaults: { _controller: AppBundle:Default:add }
+
+app_edit:
+    path:     /edit/{id}
+    defaults: { _controller: AppBundle:Default:edit }
+
+app_delete:
+    path:     /delete/{id}
+    defaults: { _controller: AppBundle:Default:delete }

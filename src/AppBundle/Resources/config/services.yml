@@ -1,0 +1,4 @@
+services:
+    app.utils:
+        class: AppBundle\services\Utils
+        arguments: [ @doctrine.orm.entity_manager ]

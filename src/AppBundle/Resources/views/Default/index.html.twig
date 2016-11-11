@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<!-- <style type="text/css">
+	
+</style> -->
+
+
+<head>
+	<title>CRUD</title>
+
+	<link rel="stylesheet" href="{{ asset('bundles/framework/css/style.css') }}">
+	<link rel="stylesheet" href="{{ asset('bundles/framework/css/animate.css') }}">
+
+	<script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/sweetalert2/6.0.1/sweetalert2.min.js"></script>
+</head>
+<body>
+	<header>
+		<h1>CRUD</h1>
+	</header>
+
+	<main id="container" class="fadeIn animated">
+		<a href="{{ path('app_add') }}" class="btn btn-primary">Ajouter un animal</a>
+
+		<table class="table">
+		<thead>
+			<tr>
+				<th>Nom</th>
+				<th>Description</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for animal in animals %}
+			    {% if animal.type|lower == 'reptile' %}
+			  		<tr class="success">
+				{% elseif animal.type|lower == 'mammifere' %}
+				  	<tr class="info">
+				{% else %}
+				  	<tr class="danger">
+				{% endif %}
+					<td>{{animal.name}}</td>
+					<td>{{animal.description}}</td>
+					<td>
+					<!-- <div class="btn-group" role="group" aria-label="..."> -->
+						<a href="{{ path('app_edit', {'id': animal.id}) }}" class="btn btn-default" aria-label="Editer">
+				  			<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+						</a>
+ 						
+ 						<a href="{{ path('app_delete', {'id': animal.id}) }}" type="button" class="btn btn-danger" aria-label="Effacer">
+				  			<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+						</a>
+					<!-- </div> -->
+					</td>
+				</tr>
+		  	{% endfor %}
+		</tbody>
+		</table>
+
+		<a href="{{ path('app_add') }}" class="btn btn-primary">Ajouter un animal</a>
+	</main>
+</body>
+</html>
